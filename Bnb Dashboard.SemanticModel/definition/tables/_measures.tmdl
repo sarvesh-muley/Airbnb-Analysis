@@ -1,0 +1,270 @@
+table _measures
+	lineageTag: 7ac98458-7a35-4934-86c1-5ea5a5fb0dd8
+
+	measure 'Total Listings' = DISTINCTCOUNT(Listings[listing_id])
+		formatString: 0
+		lineageTag: b356d55a-bd8f-4e9b-b360-99392a932935
+
+	measure 'Total Hosts' = DISTINCTCOUNT(Listings[host_id])
+		formatString: 0
+		lineageTag: 09372e05-ff6c-4629-9eb9-e262dd35ffca
+
+	measure 'Total Reviews' = COUNTROWS(Reviews)
+		formatString: 0
+		lineageTag: e3f45c95-73c3-4c0e-b8c0-e421a87ca9b6
+
+	measure 'Avg Price' = AVERAGE(Listings[price])
+		formatString: "₹"\ #,0.00;#,0.00\ -"₹";"₹"\ #,0.00
+		lineageTag: 14ebd3b2-73c1-4add-bcb3-a93a9e99d456
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Median Price' = MEDIAN(Listings[price])
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: 7bd3b946-7728-4b74-aefe-2e531ebc8265
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Avg Price per Guest' = AVERAGE(Listings[Price per Guest])
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: 9190804e-9937-47a6-be01-d8c191959b69
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	measure 'Reviews per Listing' = DIVIDE([Total Reviews], [Total Listings], 0)
+		lineageTag: 3391f9db-e58b-4b77-81ec-4824716c7542
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Superhost %' =
+			
+			DIVIDE(
+			    CALCULATE(DISTINCTCOUNT(Listings[host_id]), Listings[host_is_superhost] = TRUE()),
+			    [Total Hosts],
+			    0
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: baa5d8e7-0f0d-416b-a6c4-ad0475a2d0db
+
+	measure 'Instant Book %' =
+			
+			DIVIDE(
+			    CALCULATE([Total Listings], Listings[instant_bookable] = TRUE()),
+			    [Total Listings],
+			    0
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 688e0d43-b992-46c1-aa70-398d52d752d3
+
+	measure 'Verified Host %' =
+			
+			DIVIDE(
+			    CALCULATE(DISTINCTCOUNT(Listings[host_id]), Listings[host_identity_verified] = TRUE()),
+			    [Total Hosts],
+			    0
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: 5a9cae34-97fd-42fa-ab63-7fcc31e1f5bc
+
+	measure 'Avg Response Rate' = AVERAGE(Listings[host_response_rate])
+		lineageTag: 224a16a1-dd9c-4b49-8eae-f56f3df91978
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Acceptance Rate' = AVERAGE(Listings[host_acceptance_rate])
+		lineageTag: ed6e2202-d3b8-4354-82de-7028ca39bad8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Min Nights' = AVERAGE(Listings[minimum_nights])
+		lineageTag: 834243f7-42d7-488b-a151-d6f4dc208778
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Amenities' = AVERAGE(Listings[Amenities Count])
+		lineageTag: eb8ccee4-f475-4344-b9d4-c0cb3fd520ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Rating' = AVERAGE(Listings[review_scores_rating])
+		lineageTag: 94321893-c92f-42a4-8080-208397e29645
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Cleanliness' = AVERAGE(Listings[review_scores_cleanliness])
+		lineageTag: fe4d57b5-148a-44dd-a11b-6bee1cea1859
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Accuracy' = AVERAGE(Listings[review_scores_accuracy])
+		lineageTag: 44a740b4-41e0-4db7-8467-dc7516989f62
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Checkin' = AVERAGE(Listings[review_scores_checkin])
+		lineageTag: 864473de-f943-4ead-9f04-f21d5f5c4176
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Communication' = AVERAGE(Listings[review_scores_communication])
+		lineageTag: af6fd4fe-9853-4e8d-a349-2a6e80e1795c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Location Score' = AVERAGE(Listings[review_scores_location])
+		lineageTag: d24ffa7d-9478-4a4d-a913-e5fe922fe70f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Value Score' = AVERAGE(Listings[review_scores_value])
+		lineageTag: 0091b58d-8136-493f-ae6e-f25befa5a661
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Avg Rating' = CALCULATE([Avg Rating], ALL(Listings))
+		lineageTag: 4704a4db-c075-480f-8b8d-0019c388448a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Rating vs Overall' = [Avg Rating] - [Overall Avg Rating]
+		lineageTag: e3e22b88-a39f-40db-836b-cbb8637e46b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Price Index' =
+			
+			DIVIDE(
+			    [Avg Price],
+			    CALCULATE(
+			        [Avg Price],
+			        REMOVEFILTERS(Listings[neighbourhood], Listings[district], Listings[property_type], Listings[room_type])
+			    ),
+			    1
+			)
+		lineageTag: 78518c91-f70e-46b4-b8f5-f7d6873d744a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Reviews LY' = CALCULATE([Total Reviews], SAMEPERIODLASTYEAR('Date'[Date]))
+		formatString: 0
+		lineageTag: 50e7e7e9-e91e-4a6b-9e93-04c3f8a8c8a4
+
+	measure 'Reviews YoY %' = DIVIDE([Total Reviews] - [Reviews LY], [Reviews LY], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a171e33e-9c19-4d55-81eb-26acf580980d
+
+	measure 'Reviews Rolling 3M' =
+			
+			CALCULATE([Total Reviews], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -3, MONTH))
+		formatString: 0
+		lineageTag: 2e9134a2-d488-4299-8a6e-f8521dcca236
+
+	measure 'Reviews Last 12M' =
+			
+			CALCULATE([Total Reviews], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -12, MONTH))
+		formatString: 0
+		lineageTag: a07c6cc3-1747-4cda-8262-7bd8033f3967
+
+	measure 'Review Share %' =
+			
+			DIVIDE([Total Reviews], CALCULATE([Total Reviews], ALLSELECTED(Listings)), 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1038e766-9ef6-4bcf-8fe4-50d32322b83e
+
+	measure 'Neighbourhood Rank (Reviews)' =
+			
+			RANKX(ALLSELECTED(Listings[neighbourhood]), [Total Reviews], , DESC, DENSE)
+		formatString: 0
+		lineageTag: f1e7da9c-63a0-4ade-a87e-30a9a8552123
+
+	measure 'Active Listings' = CALCULATE([Total Listings], Listings[Listing Status] = "Active")
+		formatString: 0
+		lineageTag: 2688e07e-0288-4d46-8f46-1cb31e700976
+
+	measure 'Dormant Listings' = CALCULATE([Total Listings], Listings[Listing Status] = "Dormant")
+		formatString: 0
+		lineageTag: b52a3fbc-3c40-4f7b-9739-9d0ad35ed99d
+
+	measure 'No Review Listings' = CALCULATE([Total Listings], Listings[Listing Status] = "No Reviews")
+		formatString: 0
+		lineageTag: 51f01dc6-f192-4e81-97c5-0bae06e46d8e
+
+	measure 'Active %' = DIVIDE([Active Listings], [Total Listings], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 312743b9-f559-4b5e-85ff-7d24086b5a26
+
+	measure 'Dormant %' = DIVIDE([Dormant Listings] + [No Review Listings], [Total Listings], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: dcd8a8e6-3065-4abe-ba7a-53989665aa58
+
+	measure 'Avg Days Since Last Review' = AVERAGE(Listings[Days Since Last Review])
+		lineageTag: 3e973c57-9920-41ea-8743-3bf8db8a550b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Long Min-Stay %' = DIVIDE(CALCULATE([Total Listings], Listings[minimum_nights] > 30), [Total Listings], 0)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 33d306da-5305-429a-ab3f-f45a60b373e9
+
+	measure 'Listing Score' = ```
+			
+			VAR RatingPart = COALESCE(DIVIDE([Avg Rating], 100), 0.7)
+			VAR ValuePart = COALESCE(DIVIDE([Avg Value Score], 10), 0.7)
+			VAR AvgRevBenchmark = CALCULATE([Reviews per Listing], ALL(Listings))
+			VAR ReviewIdx = DIVIDE([Reviews per Listing], AvgRevBenchmark, 0)
+			VAR ReviewPart = DIVIDE(MIN(ReviewIdx, 2), 2)
+			RETURN 
+			IF(
+			    ISBLANK([Total Listings]), 
+			    BLANK(), 
+			    100 * (0.5 * RatingPart + 0.2 * ValuePart + 0.3 * ReviewPart)
+			)
+			```
+		lineageTag: 17ab1f70-aac8-427c-8b21-e882f0712828
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Host Flag' =
+			
+			SWITCH(
+			    TRUE(),
+			    NOT ISBLANK([Avg Rating]) && [Avg Rating] < 90, "Improve - Low rating",
+			    NOT ISBLANK([Avg Response Rate]) && [Avg Response Rate] < 0.8, "Improve - Slow response",
+			    [Dormant %] > 0.5, "Improve - High dormancy",
+			    "OK"
+			)
+		lineageTag: 4798bff7-24e3-4c02-b5b8-b62bf4ab02e7
+
+	measure 'Hosts Needing Improvement' =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(Listings[host_id]),
+			        (NOT ISBLANK([Avg Rating]) && [Avg Rating] < 90)
+			        || (NOT ISBLANK([Avg Response Rate]) && [Avg Response Rate] < 0.8)
+			        || [Dormant %] > 0.5
+			    )
+			)
+		formatString: 0
+		lineageTag: 51761027-4d99-4f3f-8b18-fa229ed0fe3a
+
+	measure 'Listings to Review Pricing' = CALCULATE([Total Listings], Listings[Pricing Action] = "Review: Overpriced")
+		formatString: 0
+		lineageTag: 0186135e-78e2-46e4-80e0-c6b0379b3c17
+
+	measure 'Listings to Raise Price' = CALCULATE([Total Listings], Listings[Pricing Action] = "Opportunity: Raise price")
+		formatString: 0
+		lineageTag: b921892b-57be-42ca-9c6d-8f2e897c8e59
+
+	partition _measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

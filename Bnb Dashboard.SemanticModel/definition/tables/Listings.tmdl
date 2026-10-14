@@ -1,0 +1,475 @@
+table Listings
+	lineageTag: 6b4cd633-04bb-4c50-8bb5-367b2ce70967
+
+	column listing_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c5d05ea5-40e8-4093-a900-fe96f71bb955
+		summarizeBy: none
+		sourceColumn: listing_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 1f4d4378-1a2d-4a67-9533-d35efe35730c
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a7696cba-aed8-4c0e-b89c-a80a3f0c02a6
+		summarizeBy: sum
+		sourceColumn: host_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_since
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dfd7e2e7-2118-48a5-adeb-4d8a999d11d0
+		summarizeBy: none
+		sourceColumn: host_since
+
+		variation Variation
+			isDefault
+			relationship: 0d63bd1f-fac9-409a-9627-c1a520adaee5
+			defaultHierarchy: LocalDateTable_0501872d-e3e2-45fb-a7ab-7e875d167d21.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column host_location
+		dataType: string
+		lineageTag: 18ae4a1b-eb3c-4f34-afff-9bc0fc959d65
+		summarizeBy: none
+		sourceColumn: host_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_response_time
+		dataType: string
+		lineageTag: daf5d9b1-d4f2-4deb-a4a5-b416e1301220
+		summarizeBy: none
+		sourceColumn: host_response_time
+		sortByColumn: 'Response Time Order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_response_rate
+		dataType: double
+		lineageTag: 8724d786-3724-4573-a547-bd609e098de7
+		summarizeBy: sum
+		sourceColumn: host_response_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column host_acceptance_rate
+		dataType: double
+		lineageTag: 921bfcf7-5044-410a-84bb-77812ad13868
+		summarizeBy: sum
+		sourceColumn: host_acceptance_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column host_is_superhost
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 186920e6-af08-4c5c-94b6-0dda5b099e77
+		summarizeBy: none
+		sourceColumn: host_is_superhost
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_total_listings_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e66d23f-a8d8-44da-838e-a6b30fc57eb9
+		summarizeBy: sum
+		sourceColumn: host_total_listings_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_has_profile_pic
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0586e0fc-9b5d-417b-bfed-e63b8b144bf5
+		summarizeBy: none
+		sourceColumn: host_has_profile_pic
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_identity_verified
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bd7383ca-e9e0-4666-8421-07b39dd57b76
+		summarizeBy: none
+		sourceColumn: host_identity_verified
+
+		annotation SummarizationSetBy = Automatic
+
+	column neighbourhood
+		dataType: string
+		lineageTag: 6a2c0cfc-5e1a-45a2-8b7e-d95941135824
+		summarizeBy: none
+		sourceColumn: neighbourhood
+
+		annotation SummarizationSetBy = Automatic
+
+	column district
+		dataType: string
+		lineageTag: 327641b4-5c99-4d2a-b839-94660bf00076
+		summarizeBy: none
+		sourceColumn: district
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 74429bac-7857-4b85-ae09-0aa72429d0d5
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 0280ad5b-cf61-4f87-bbed-4b3b56767977
+		dataCategory: Latitude
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: ba7fa012-fc37-4fa9-bf5f-940aff6a0bc0
+		dataCategory: Longitude
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column property_type
+		dataType: string
+		lineageTag: fa3c8261-4ccb-4835-b1f9-ea9d953bf74a
+		summarizeBy: none
+		sourceColumn: property_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column room_type
+		dataType: string
+		lineageTag: 9f3cc10b-9d47-4a5e-b2b3-89a1b49cdb1d
+		summarizeBy: none
+		sourceColumn: room_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column accommodates
+		dataType: int64
+		formatString: 0
+		lineageTag: d782d481-8feb-42f1-bf90-3a53129d6b81
+		summarizeBy: sum
+		sourceColumn: accommodates
+
+		annotation SummarizationSetBy = Automatic
+
+	column bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: fed93905-ee3a-4abe-8cc8-05770a87a4aa
+		summarizeBy: sum
+		sourceColumn: bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column amenities
+		dataType: string
+		lineageTag: cdef5d6a-e9b6-4cf2-a4ba-54f52e08133f
+		summarizeBy: none
+		sourceColumn: amenities
+
+		annotation SummarizationSetBy = Automatic
+
+	column price
+		dataType: decimal
+		formatString: 0
+		lineageTag: 007378fe-03d2-4d0e-b921-1ca5bbea12c4
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_nights
+		dataType: int64
+		formatString: 0
+		lineageTag: d02fd817-1c33-412a-8c86-0eedaa8d019c
+		summarizeBy: sum
+		sourceColumn: minimum_nights
+
+		annotation SummarizationSetBy = Automatic
+
+	column maximum_nights
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e7bfd17-6dfa-424c-a54e-d7187231e097
+		summarizeBy: sum
+		sourceColumn: maximum_nights
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ce310c4-6cd0-4cca-8058-06db55235bc3
+		summarizeBy: sum
+		sourceColumn: review_scores_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_accuracy
+		dataType: int64
+		formatString: 0
+		lineageTag: 011317a8-9ee7-42a5-9485-02b376b1f4e7
+		summarizeBy: sum
+		sourceColumn: review_scores_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_cleanliness
+		dataType: int64
+		formatString: 0
+		lineageTag: e0706e83-06d6-4274-be73-a938e215e9da
+		summarizeBy: sum
+		sourceColumn: review_scores_cleanliness
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_checkin
+		dataType: int64
+		formatString: 0
+		lineageTag: 027577e9-5b02-4e1d-addf-31b15ae2408c
+		summarizeBy: sum
+		sourceColumn: review_scores_checkin
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_communication
+		dataType: int64
+		formatString: 0
+		lineageTag: 695688b0-c43a-41ac-8f82-b26592fa6773
+		summarizeBy: sum
+		sourceColumn: review_scores_communication
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_location
+		dataType: int64
+		formatString: 0
+		lineageTag: 3adb533c-6f8f-4f33-9361-69bb7d06ffe1
+		summarizeBy: sum
+		sourceColumn: review_scores_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column review_scores_value
+		dataType: int64
+		formatString: 0
+		lineageTag: df2e9f49-dad2-4a01-b699-ab5aa5f15534
+		summarizeBy: sum
+		sourceColumn: review_scores_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column instant_bookable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 238c5078-5930-45aa-9b0f-19cee1668e48
+		summarizeBy: none
+		sourceColumn: instant_bookable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Review Count' = CALCULATE(COUNTROWS(Reviews)) + 0
+		formatString: 0
+		lineageTag: 81b4fdf7-73bb-465d-abcb-b14518ec6b09
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Review Date' = CALCULATE(MAX(Reviews[date]))
+		formatString: General Date
+		lineageTag: 5cee797b-37ad-4a02-843d-c9f7e48b8a25
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 0804937d-af5a-4c59-bd59-c8a075e2b039
+			defaultHierarchy: LocalDateTable_0ff1526d-06cd-4d96-899e-3394dbe2688d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Since Last Review' = ```
+			
+			VAR MaxDatasetDate = CALCULATE(MAX(Reviews[date]), ALL(Reviews))
+			RETURN 
+			IF(
+			    ISBLANK(Listings[Last Review Date]), 
+			    BLANK(),
+			    DATEDIFF(Listings[Last Review Date], MaxDatasetDate, DAY)
+			)
+			```
+		formatString: 0
+		lineageTag: 3cc4967f-456b-4011-a576-80bd94b930a7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Listing Status' =
+			
+			SWITCH(
+			    TRUE(),
+			    Listings[Review Count] = 0, "No Reviews",
+			    Listings[Days Since Last Review] <= 180, "Active",
+			    Listings[Days Since Last Review] <= 365, "Slowing",
+			    "Dormant"
+			)
+		lineageTag: f3069eda-ce74-4a1b-8648-f5cfd151789d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price per Guest' = DIVIDE(Listings[price], Listings[accommodates])
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: b4471bb0-0022-4fde-8448-b2a10f384536
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	column 'Amenities Count' =
+			
+			VAR CleanText = TRIM(Listings[amenities])
+			RETURN
+			IF(
+			    ISBLANK(CleanText) || CleanText = "[]" || CleanText = "",
+			    0,
+			    LEN(CleanText) - LEN(SUBSTITUTE(CleanText, ",", "")) + 1
+			)
+		formatString: 0
+		lineageTag: 59ab4e3f-3a33-4909-91aa-f948e3c9f753
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Min Stay Band' =
+			
+			SWITCH(
+			    TRUE(),
+			    Listings[minimum_nights] <= 2, "1-2 nights",
+			    Listings[minimum_nights] <= 7, "3-7 nights",
+			    Listings[minimum_nights] <= 30, "8-30 nights",
+			    "30+ nights"
+			)
+		lineageTag: eb498fa6-2d10-4f73-b288-a167943eabb6
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Tier' = ```
+			
+			VAR P25 = CALCULATE(PERCENTILE.INC(Listings[price], 0.25), ALLEXCEPT(Listings, Listings[city]))
+			VAR P75 = CALCULATE(PERCENTILE.INC(Listings[price], 0.75), ALLEXCEPT(Listings, Listings[city]))
+			RETURN 
+			SWITCH(
+			    TRUE(),
+			    Listings[price] <= P25, "Budget",
+			    Listings[price] <= P75, "Mid-range",
+			    "Premium"
+			)
+			```
+		lineageTag: bbc2cf7e-c4aa-4e9a-ba1d-2cf7c913dd76
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Peer Median Price' =
+			
+			CALCULATE(
+			    MEDIAN(Listings[price]),
+			    ALLEXCEPT(Listings, Listings[city], Listings[neighbourhood], Listings[room_type])
+			)
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: 891d3fc7-8079-41c2-8bd9-488f9d6bcdf6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
+	column 'Pricing Action' = ```
+			
+			VAR Ratio = DIVIDE(Listings[price], Listings[Peer Median Price])
+			RETURN 
+			SWITCH(
+			    TRUE(),
+			    ISBLANK(Listings[review_scores_rating]), "Unrated - Monitor",
+			    Ratio > 1.5 && Listings[review_scores_rating] < 90, "Review: Overpriced",
+			    Ratio < 0.7 && Listings[review_scores_rating] >= 95, "Opportunity: Raise price",
+			    "OK"
+			)
+			```
+		lineageTag: 09a1d7cd-5a85-4c1a-b09e-f37178dda651
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Response Time Order'
+		dataType: int64
+		formatString: 0
+		lineageTag: 55bbd8cc-c1ed-4469-9096-b68f415771ff
+		summarizeBy: sum
+		sourceColumn: Response Time Order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Listings = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\sql Business intelligence\Air BnB Data\Listings.csv"),[Delimiter=",", Columns=33, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"listing_id", Int64.Type}, {"name", type text}, {"host_id", Int64.Type}, {"host_since", type date}, {"host_location", type text}, {"host_response_time", type text}, {"host_response_rate", type text}, {"host_acceptance_rate", type text}, {"host_is_superhost", type text}, {"host_total_listings_count", Int64.Type}, {"host_has_profile_pic", type text}, {"host_identity_verified", type text}, {"neighbourhood", type text}, {"district", type text}, {"city", type text}, {"latitude", type number}, {"longitude", type number}, {"property_type", type text}, {"room_type", type text}, {"accommodates", Int64.Type}, {"bedrooms", Int64.Type}, {"amenities", type text}, {"price", Int64.Type}, {"minimum_nights", Int64.Type}, {"maximum_nights", Int64.Type}, {"review_scores_rating", Int64.Type}, {"review_scores_accuracy", Int64.Type}, {"review_scores_cleanliness", Int64.Type}, {"review_scores_checkin", Int64.Type}, {"review_scores_communication", Int64.Type}, {"review_scores_location", Int64.Type}, {"review_scores_value", Int64.Type}, {"instant_bookable", type text}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"listing_id"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Removed Duplicates","t","True",Replacer.ReplaceText,{"host_is_superhost", "host_has_profile_pic", "host_identity_verified", "instant_bookable"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","f","False",Replacer.ReplaceText,{"host_is_superhost", "host_has_profile_pic", "host_identity_verified", "instant_bookable"}),
+				    #"Filtered Rows" = Table.SelectRows(#"Replaced Value1", each true),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows",{{"host_response_rate", Percentage.Type}, {"host_acceptance_rate", Percentage.Type}}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Changed Type1", each true),
+				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows1", each [price] > 0),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Filtered Rows2",{{"price", Currency.Type}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type2", "Response Time Order", each if [host_response_time] = "within an hour" then 1 else if [host_response_time] = "within a few hours" then 2 else if [host_response_time] = "within a day" then 3 else if [host_response_time] = "a few days or more" then 4 else 5),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Conditional Column",{{"Response Time Order", Int64.Type}, {"host_is_superhost", type logical}, {"host_has_profile_pic", type logical}, {"host_identity_verified", type logical}, {"instant_bookable", type logical}})
+				in
+				    #"Changed Type3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,344 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "928b20a4b959886bdb3a",
+  "position": {
+    "x": 0,
+    "y": 125,
+    "z": 4000,
+    "height": 595,
+    "width": 1280,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Reactivate dead supply because 68.16% of listings are dormant and only 22.11% are actively generating guest bookings. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Coach underperforming hosts directly since 138K out of 182K total hosts currently require performance and engagement improvements. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Fix pricing imbalances immediately as 26K listings remain underpriced and 6K are overpriced versus current market demand. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Counter the 7.84% annual demand drop by aggressively driving promotional campaigns across high-volume areas like Centro Storico. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Target hotel expansions since hotel rooms achieve the highest average daily price of ₹815.96 with steady demand. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Grow the superhost share from 15% to build trust and elevate listing scores above the 80.37 benchmark.",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Tailor promotional campaigns toward mid-tier properties, as 99K hosts dominate compared to 46K in the premium tier. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Overhaul shared room offerings because they deliver the lowest listing score of 70.30 and just 5.36 reviews. ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " Calibrate search filters because a low ₹150 median price contrasts sharply with the ₹609.04 average price",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#1f1f1f"
+                    }
+                  },
+                  {
+                    "value": ". ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "color": "#1f1f1f"
+                    }
+                  },
+                  {
+                    "value": " "
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "Google Sans Text, sans-serif",
+                      "fontSize": "20pt",
+                      "color": "#1f1f1f"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "spaceAboveDivider": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            },
+            "spaceAboveSubtitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

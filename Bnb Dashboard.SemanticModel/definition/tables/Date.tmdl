@@ -1,0 +1,75 @@
+table Date
+	lineageTag: 255a6880-71d4-4655-b38d-d90d174b810b
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 5d41f24a-7a4f-41f4-8797-af6f42565756
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 8ccf2900-d8f2-473e-820b-ad5d596040ba
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month No'
+		formatString: 0
+		lineageTag: c7b5578c-d5f5-46b8-9fe3-7a885ef7aae2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month No]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: 875d6c80-c5e2-4c99-8163-53159b34a172
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month No'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year-Month
+		lineageTag: 6a27ef49-73e5-4a1c-96c0-02543e87daab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year-Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: a038e3d5-0d80-4f6f-8075-1512df27191d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = calculated
+		mode: import
+		source =
+				
+				VAR MinDate = MIN(Reviews[date])
+				VAR MaxDate = MAX(Reviews[date])
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(MinDate, MaxDate),
+				    "Year", YEAR([Date]),
+				    "Month No", MONTH([Date]),
+				    "Month", FORMAT([Date], "MMM"),
+				    "Year-Month", FORMAT([Date], "YYYY-MM"),
+				    "Quarter", "Q" & FORMAT([Date], "Q")
+				)
+
+	annotation PBI_Id = f691393283f24fccacefe12ed88b9d27
+
